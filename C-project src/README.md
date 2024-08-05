@@ -9,12 +9,9 @@ libhcs-async is a high-performance asynchronous offloading framework based Intel
     cd /yourworkspace
     git clone https://github.com/3Miracle/QuickFL.git
 
-QHCS is based QAT, first we need install QAT drive (hardware version we use is dh8970).
+libhcs-async is based QAT, first we need install QAT drive (hardware version we use is Intel® QuickAssist Adapter 8960).The download is located at https://www.intel.com/content/www/us/en/products/sku/125199/intel-quickassist-adapter-8960/downloads.html
 
-    cd /yourworkspace/libhcs4QHCS/tar
-    tar -xzof QAT.tar.gz
-    cd QAT
-    chmod -R o-rwx *
+    cd /yourworkspace/QAT_DIR
     apt-get update
     apt-get install pciutils-dev
     apt-get install g++
@@ -26,19 +23,16 @@ QHCS is based QAT, first we need install QAT drive (hardware version we use is d
     make samples-install
     service qat_service start
 
-    export ICP_ROOT=/yourworkspace/libhcs4QHCS/tar/QAT
 
 then, rewrite 2 item in all 3 QAT config file: /etc/c6xx_dev0.conf、/etc/c6xx_dev1.conf、/etc/c6xx_dev2.conf:
 
     CyNumConcurrentAsymRequests = 2048
     NumberCyInstances = 1
 
-QHCS need a customed OpenSSL:
+libhcs-async requires OpenSSL for coruntine calls:
 
-    cd /yourworkspace/libhcs4QHCS/tar
-    tar -xzof  openssl-master-g.tar.gz
-    cd openssl-master-g
-    then, you can refer to OpenSSL homepage for install it.
+
+    you can refer to OpenSSL homepage for install it.
 
 Dependencies for libhcs:
 
@@ -51,18 +45,17 @@ typical linux system.
 
 First, you need rewrite 2 macro base your dir path in CMakeLists.txt
 
-    set(ICP_ROOT "/root/QAT")   #different for your machine
-    set(SSL_ROOT "/home/dan/openssl-master-g")  #different for your machine
+    set(ICP_ROOT "/root/QAT_DIR")   #different for your machine
+    set(SSL_ROOT "/home/OPENSSL_DIR")  #different for your machine
 
 Then, you can install:
 
-    cd /yourworkspace/libhcs4QHCS
+    cd /yourworkspace/
     mkdir build
     cd build
     cmake ..
     make hcs
     sudo make install # Will install to /usr/local by default
-    make QHCS_bench
 
 To uninstall all installed files, one can run the following command:
 
@@ -70,9 +63,3 @@ To uninstall all installed files, one can run the following command:
 
 ## benchmark
 
-libhcs4QHCS gives a benchmark to test QHCS's performance.
-
-After “make QHCS_bench”，then
-
-    cd bin
-    ./QHCS_bench
