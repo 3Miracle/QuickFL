@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ASYNC.C": "cpp",
+        "ASYNC_WAIT.C": "cpp"
+    }
+}
