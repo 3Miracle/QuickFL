@@ -1,18 +1,13 @@
-# libhcs4QHCS #
+# libhcs-async #
 
-Libhcs is a C library implementing a number of partially homormophic encryption
-schemes. Refer to https://github.com/tiehuis/libhcs.
+C-project src is an efficient QAT asynchronous offloading implementation of the paillier homomorphic encryption/decryption algorithm based on **QAT** and **libhcs**. **libhcs** is a paillier implementation based on **GMP** (GNU Multiple Precision Arithmetic Library). **QAT** is a proposed by Intel as a QAT is a high-performance ASIC chip-based solution designed to accelerate data center security (OpenSSL symmetric/asymmetric encryption/decryption) and compression (DEFLATE compression) loads. Compared to general-purpose hardware accelerator such as FPGAs and GPUs, QAT accelerators offer performance and power efficiency advantages due to their highly customized ASIC chip design.
 
-QHCS is a high-performance asynchronous offloading framework based Intel QAT for partially homomorphic encryption algorithm.
-
-Libhcs4QHCS is the QHCS version of libhcs.
-
-Now, libhcs4QHCS have implemented Paillier’s offloading to QAT.
+libhcs-async is a high-performance asynchronous offloading framework based Intel QAT for Paillier algorithm.We mainly transplants the modular exponentiation operator in the QAT driver for concurrent, concurrent and asynchronous designs.
 
 ## Dependencies
 
     cd /yourworkspace
-    git clone https://github.com/ColonelDan/libhcs4QHCS.git
+    git clone https://github.com/3Miracle/QuickFL.git
 
 QHCS is based QAT, first we need install QAT drive (hardware version we use is dh8970).
 
