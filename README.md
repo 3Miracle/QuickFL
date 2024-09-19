@@ -9,7 +9,7 @@ Welcome to the source repository for the Infocom2025 paper "QuickFL: A QAT Aided
 
 ## Introduction
 
-QuickFL is a federated learning training acceleration solution based on QAT hardware acceleration cards. It leverages QAT-accelerated DEFLATE encoding technology combined with an adaptive error feedback gradient compression algorithm to reduce communication overhead. The framework also features a high-performance homomorphic encryption and decryption software stack, designed around QAT-accelerated modular exponentiation operations, to minimize computational costs. This solution enables joint optimization of computation and communication overhead in homomorphic encryption-based federated learning, utilizing QAT hardware acceleration cards..
+QuickFL is a federated learning training acceleration solution based on QAT hardware acceleration cards. It leverages QAT-accelerated DEFLATE encoding technology combined with an adaptive error feedback gradient compression algorithm to reduce communication overhead. The framework also features a high-performance homomorphic encryption and decryption software stack, designed around QAT-accelerated modular exponentiation operations, to minimize computational costs. This solution enables joint optimization of computation and communication overhead in homomorphic encryption-based federated learning, utilizing QAT hardware acceleration cards.
 
 ## Structure
 
