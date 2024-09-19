@@ -77,14 +77,14 @@ target_link_libraries(test_exam hcs qat_s ${GMP_LIBRARIES} ${GMPXX_LIBRARIES})
 # endforeach()
 # EN: Test commands
 
-#BEGIN: Build QHCS_bench
+# BEGIN: Build QHCS_bench
 # file(GLOB QHCS_srcs "QHCS_bench/*.cpp")
 # add_executable(QHCS_bench ${QHCS_srcs})
 # target_link_libraries(QHCS_bench hcs ${GMP_LIBRARIES} qat_s)
 # END: Build QHCS_bench
 
-BEGIN: Build Multi-QFL
+# BEGIN: Build Multi-QFL
 file(GLOB QFL_srcs "Multi-QFL/*.cpp")
 add_executable(Multi-QFL ${QFL_srcs})
 target_link_libraries(Multi-QFL hcs ${GMP_LIBRARIES} qat_s)
-END: Build Multi-QFL
+# END: Build Multi-QFL
